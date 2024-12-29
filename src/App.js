@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import './App.css';
 import Header from './components/Header'
@@ -18,6 +18,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Header/>}/>
             <Route path="/card_lots" element={<Lots/>}/>
+            <Route path="/lot_preview" element={<h1>hi</h1>} />
             <Route path="/singles" element={<Singles/>}/>
         </Routes>
         
