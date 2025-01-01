@@ -14,6 +14,7 @@ import { setName } from './components/lotSlice';
 function App() {
 
   const lotName = useSelector((state) => state.lot.lotName);
+  const preview = useSelector((state) => state.lot.lotPictures);
 
   return (
     <div className="App">
@@ -21,7 +22,13 @@ function App() {
         <Routes>
             <Route path="/" element={<Header/>}/>
             <Route path="/card_lots" element={<Lots/>}/>
-            <Route path="/lot_preview" element={<h1>Name: {lotName}</h1>} />
+            <Route path="/lot_preview" element={<h1>
+              Name: {lotName}
+              picture: {preview}
+
+            </h1>
+             
+          } />
             <Route path="/singles" element={<Singles/>}/>
         </Routes>
         

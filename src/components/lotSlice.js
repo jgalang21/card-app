@@ -4,15 +4,19 @@ const counterSlice = createSlice( {
     name: "lotSlice",
     initialState:
     {
-        lotName: ""
+        lotName: "",
+        lotPictures: null
     },
 
     reducers: {
         setName: (state, action) => {
             state.lotName = action.payload
+        },
+        setPictures: (state, action) => {
+            state.lotPictures = action.payload
         }
     }
 })
 
-export const {setName} = counterSlice.actions
+export const {setName, setPictures} = counterSlice.actions
 export default counterSlice.reducer
