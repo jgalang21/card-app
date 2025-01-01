@@ -7,10 +7,13 @@ import SelectionButton from './components/SelectionButton'
 import Lots from './components/Lots'
 import Singles from './components/Singles';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { setName } from './components/lotSlice';
+
 
 function App() {
 
-  const location = useLocation()
+  const lotName = useSelector((state) => state.lot.lotName);
 
   return (
     <div className="App">
@@ -18,7 +21,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Header/>}/>
             <Route path="/card_lots" element={<Lots/>}/>
-            <Route path="/lot_preview" element={<h1>hi</h1>} />
+            <Route path="/lot_preview" element={<h1>Name: {lotName}</h1>} />
             <Route path="/singles" element={<Singles/>}/>
         </Routes>
         

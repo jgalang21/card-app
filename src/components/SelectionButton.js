@@ -15,6 +15,7 @@ const SelectionButton = (props) => {
             to={props.to}
             variant={props.variant} 
             size={props.size}
+            type={props.type}
             >
             {props.title}
             </Button>
