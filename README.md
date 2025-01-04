@@ -1,4 +1,4 @@
-# WORK IN PROGRESS 
+# WORK IN PROGRESS - LINKING TO GITLAB POSSIBLY
 
 # Getting Started with Create React App
 
