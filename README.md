@@ -1,4 +1,5 @@
-# WORK IN PROGRESS - LINKING TO GITLAB POSSIBLY
+# This project is an automated ebay listing tool for sports cards specifically. 
+# This repo exists on github (publicly for my resume) and gitlab (for testing CI/CD build pipelines)
 
 # Getting Started with Create React App
 
