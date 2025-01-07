@@ -6,7 +6,7 @@ import Header from './components/Header'
 import SelectionButton from './components/SelectionButton'
 import Lots from './components/Lots'
 import Singles from './components/Singles';
-
+import Summary from './components/Summary';
 import { useSelector, useDispatch } from 'react-redux';
 import { setName } from './components/lotSlice';
 
@@ -22,20 +22,12 @@ function App() {
         <Routes>
             <Route path="/" element={<Header/>}/>
             <Route path="/card_lots" element={<Lots/>}/>
-            <Route path="/lot_preview" element={<h1>
-              Name: {lotName}
-              picture: {preview}
-
-            </h1>
-             
-          } />
+            <Route path="/lot_preview" element={<Summary/>}/>
             <Route path="/singles" element={<Singles/>}/>
         </Routes>
-        
 
-   
-          <SelectionButton title={"Card Lots"} variant={"primary"} to={'/card_lots'} size={"lg"}/>
-          <SelectionButton title={"Singles"} variant={"secondary"} to={'/singles'} size={"lg"}/>
+        <SelectionButton title={"Card Lots"} variant={"primary"} to={'/card_lots'} size={"lg"}/>
+        <SelectionButton title={"Singles"} variant={"secondary"} to={'/singles'} size={"lg"}/>
   
 
    
