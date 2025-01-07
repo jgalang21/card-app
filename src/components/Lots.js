@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import '../App.css';
 import {useDispatch} from "react-redux"
 import { setName, setPictures} from "./lotSlice";
@@ -8,6 +8,8 @@ import {Button} from "react-bootstrap"
 import {Form} from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import {Image} from 'react-bootstrap';
+
+import { Link } from 'react-router-dom';
 
 function Lots(){
     const dispatch = useDispatch();
@@ -21,11 +23,14 @@ function Lots(){
     };
 
     const handleSubmit = (event) => {
+
         event.preventDefault();
+        console.log(value)
         dispatch(setName(value));
+        console.log(imageUrls)
         dispatch(setPictures(imageUrls));
-        navigate('/lot_preview');
-        console.log("value is: " + value);
+        navigate('/lot_preview')
+       
     }
 
     const handleFileChange = (e) => {
@@ -55,10 +60,9 @@ function Lots(){
                 variant={"primary"}
                 title="Back to home"   
                 size="sm"
-             
              />
 
-             <h1 className="intro--header">Create a new Lot</h1>
+            <h1 className="intro--header">Create a new Lot</h1>
 
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-2">
@@ -78,36 +82,30 @@ function Lots(){
                         {maxLength - value.length} characters left
                     </Form.Label>
                     <br></br>
-
                 </Form.Group>
                 <Form.Group controlId="formFileMultiple" className="mb-3">
                     <Form.Label>Upload pictures of cards (Scans preferrably)</Form.Label>
                     <Form.Control type="file" multiple onChange={handleFileChange}/>
                 </Form.Group>
-                
                 {
-                    imageUrls.map((url, index) =>
-                        
-                      <ul>
-                        <Image key={index} src={url} 
-                            width={400}
-                            height={700}
-                        
+                    imageUrls.map((url, index) => 
+                    <ul >
+                        <Image 
+                        key={index}
+                        src={url} 
+                        width={400}
+                        height={700}   
                         />
-                      </ul>
-                     
-                    
+                    </ul>
                     )
-                    
                 }
 
-
-                <br></br>
-
-                <Button type="submit">
-                    Submit 
-
-                </Button>
+ 
+                
+                    <Button type='submit'>
+                        Submit changes
+                    </Button>
+               
 
             </Form>
             
