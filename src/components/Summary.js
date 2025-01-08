@@ -34,7 +34,7 @@ function Summary(){
                     
                 {
            
-                    x.push(url);
+                    x.push(index);
                   
                     return(
                         <Image
@@ -48,9 +48,18 @@ function Summary(){
             
             )
            }
+            {
+            console.log(x)
+            }
+
            {
+            
             csvData.push(x)
+           
            }
+              {
+            console.log(csvData)
+            }
      
            <h4>Assuming everything looks good, click the export to ebay button below:</h4>
            
